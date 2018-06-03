@@ -1,5 +1,5 @@
 {
-  "name": "hexschool-thef2e",
+  "name": "hexschool-the-f2e",
   "version": "0.0.0",
   "description": "六角學院 The F2E - 前端修練精神時光屋",
   "main": "index.js",
@@ -13,6 +13,18 @@
   "author": "Kainors",
   "license": "MIT",
   "devDependencies": {
-    "express": "^4.16.3"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.16"
   }
 }

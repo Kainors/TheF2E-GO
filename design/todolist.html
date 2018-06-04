@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="todolist.css">
+  <title>Todo List</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-bar">
+        <li class="nav-item active"><a href="#">My Task</a></li>
+        <li class="nav-item"><a href="#">In Progress</a></li>
+        <li class="nav-item"><a href="#">Completed</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="content-wrapper">
+    <div class="new-todo">
+      <input type="text" placeholder=" + Add Task">
+    </div>
+    <div class="todo-list">
+        <ul class="todo-list">
+          <li class="todo-item">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="todoCheck1">
+              <span class="checkbox-marker"></span>
+            </label>
+            <label for="todoCheck1" class="todo-title">
+              Type Something Here...
+            </label>
+            <div class="toolbox">
+              <span><i class="fas fa-star"></i></span>
+              <span><i class="fas fa-edit"></i></span>
+            </div>
+            <div class="tip-content">
+              <div class="deadline">
+                <i class="far fa-calendar-alt"></i>
+              </div>
+            </div>
+          </li>
+          <li class="todo-item"></li>
+          <li class="todo-item"></li>
+          <li class="todo-item"></li>
+          <li class="todo-item completed">
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="todoCheck1">
+                <span class="checkbox-marker"></span>
+              </label>
+              <label for="todoCheck1" class="todo-title">
+                Type Something Here...
+              </label>
+              <div class="toolbox">
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-edit"></i></span>
+              </div>
+          </li>
+        </ul>
+    </div>
+  </section>
+</body>
+</html>

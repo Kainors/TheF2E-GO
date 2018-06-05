@@ -17,6 +17,7 @@
     "babel-loader": "^7.1.4",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "hoek": "^4.2.1",
     "node-sass": "^4.9.0",
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",

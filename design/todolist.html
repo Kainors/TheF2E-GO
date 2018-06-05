@@ -12,54 +12,98 @@
 <body>
   <header>
     <nav>
-      <ul class="nav-bar">
+      <ul class="nav-bar main-title">
         <li class="nav-item active"><a href="#">My Task</a></li>
         <li class="nav-item"><a href="#">In Progress</a></li>
         <li class="nav-item"><a href="#">Completed</a></li>
       </ul>
     </nav>
   </header>
-  <section class="content-wrapper">
+  <section class="content-wrapper main-title">
     <div class="new-todo">
       <input type="text" placeholder=" + Add Task">
     </div>
-    <div class="todo-list">
-        <ul class="todo-list">
-          <li class="todo-item">
-            <label class="checkbox-wrapper">
-              <input type="checkbox" id="todoCheck1">
-              <span class="checkbox-marker"></span>
-            </label>
-            <label for="todoCheck1" class="todo-title">
-              Type Something Here...
-            </label>
-            <div class="toolbox">
-              <span><i class="fas fa-star"></i></span>
-              <span><i class="fas fa-edit"></i></span>
-            </div>
-            <div class="tip-content">
-              <div class="deadline">
-                <i class="far fa-calendar-alt"></i>
-              </div>
-            </div>
-          </li>
-          <li class="todo-item"></li>
-          <li class="todo-item"></li>
-          <li class="todo-item"></li>
-          <li class="todo-item completed">
-              <label class="checkbox-wrapper">
-                <input type="checkbox" id="todoCheck1">
-                <span class="checkbox-marker"></span>
-              </label>
-              <label for="todoCheck1" class="todo-title">
-                Type Something Here...
-              </label>
-              <div class="toolbox">
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-edit"></i></span>
-              </div>
-          </li>
-        </ul>
+    <ul class="todo-list">
+      <li class="todo-item marked">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="todoCheck1">
+          <span class="checkbox-marker"></span>
+        </label>
+        <label for="todoCheck1" class="todo-title">
+          Type Something Here...
+        </label>
+        <div class="toolbox">
+          <span class="star-button"><i class="fas fa-star"></i></span>
+          <span class="edit-button"><i class="fas fa-pencil-alt"></i></span>
+        </div>
+        <div class="tips-content remark">
+          <div class="deadline">
+            <i class="far fa-calendar-alt"></i>
+            2018/06/07
+          </div>
+          <div class="file-item">
+            <i class="far fa-file"></i>
+          </div>
+          <div class="comment">
+            <i class="far fa-comment-dots"></i>
+          </div>
+        </div>
+      </li>
+      <li class="todo-item marked">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="todoCheck1">
+          <span class="checkbox-marker"></span>
+        </label>
+        <label class="todo-title">
+          Type Something Here...
+        </label>
+        <div class="toolbox">
+          <span class="star-button"><i class="fas fa-star"></i></span>
+          <span class="edit-button"><i class="fas fa-pencil-alt"></i></span>
+        </div>
+      </li>
+      <li class="todo-item">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="todoCheck1">
+          <span class="checkbox-marker"></span>
+        </label>
+        <label class="todo-title">
+          Type Something Here...
+        </label>
+        <div class="toolbox">
+          <span><i class="far fa-star"></i></span>
+          <span><i class="fas fa-pencil-alt"></i></span>
+        </div>
+      </li>
+      <li class="todo-item">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="todoCheck1">
+          <span class="checkbox-marker"></span>
+        </label>
+        <label class="todo-title">
+          Type Something Here...
+        </label>
+        <div class="toolbox">
+          <span><i class="far fa-star"></i></span>
+          <span><i class="fas fa-pencil-alt"></i></span>
+        </div>
+      </li>
+      <li class="todo-item completed">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="todoCheck1">
+            <span class="checkbox-marker"></span>
+          </label>
+          <label class="todo-title">
+            Type Something Here...
+          </label>
+          <div class="toolbox">
+            <span><i class="far fa-star"></i></span>
+            <span><i class="fas fa-pencil-alt"></i></span>
+          </div>
+      </li>
+    </ul>
+    <div class="todo-counting">
+      4 tasks left
     </div>
   </section>
 </body>

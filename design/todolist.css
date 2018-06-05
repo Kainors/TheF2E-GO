@@ -1,4 +1,4 @@
-:root{
+:root {
   --main-color-light: #4A90E2;
   --main-color-deep: #00408B;
   --danger-color: #D0021B;
@@ -6,7 +6,8 @@
   --important-color-lite: #FFF2DC;
   --font-color-deep: #000000;
   --font-color-light: #757575;
-  --background-color-deep: #C8C8C8;
+  --font-color-lightest: #C8C8C8;
+  --background-color-deep: #E1E1E1;
   --background-color-light: #F2F2F2;
 }
 
@@ -15,8 +16,12 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 a {
@@ -29,57 +34,82 @@ ul {
 
 input[type="text"],
 textarea {
-  box-sizing : border-box;
-  padding: .25rem;
-  font-size: 1.2rem;
-  border: 1px solid #C8C8C8;
-  border-radius: .25rem;
+  box-sizing: border-box;
+  border: .13rem solid #C8C8C8;
+  border-radius: .31rem;
   width: 100%;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  padding: 1.1rem 2rem;
 }
 
 input[type="text"]:focus,
 textarea:focus {
   outline: none;
-  border: 1px solid #4A90E2;
+  border: .13rem solid var(--main-color-light);
+}
+
+/** Define Style **/
+
+.main-title,
+::placeholder {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.paragraph,
+.remark {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: normal;
+}
+
+.remark,
+::placeholder {
+  color: var(--font-color-light);
 }
 
 /** Site Style **/
 
 body {
-  background-color: #C8C8C8;
+  background-color: var(--background-color-deep);
 }
 
 header>nav {
-  height: 76px;
-  background-color: #4A90E2;
+  background-color: var(--main-color-light);
 }
 
 header>nav>ul {
-  width: 100%;
-  height: 100%;
+  width: 100%;;
   list-style: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #4A90E2;
 }
 
 header>nav>ul>li {
-  height: 100%;
-  margin: 0 1px;
-  width: 220px;
+  width: 10rem;
+  height: 4.44rem;
+  margin: 0 1.9rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border-bottom: .31rem solid var(--main-color-light);
 }
 
 header>nav>ul>li>a {
-  font-size: 1.4rem;
-  color: #00408B;
+  color: var(--main-color-deep);
 }
 
 header>nav>ul>li.active {
-  border-bottom: 3.5px solid #00408B;
+  border-bottom-color: var(--main-color-deep);
 }
 
 header>nav>ul>li.active>a {
@@ -87,7 +117,7 @@ header>nav>ul>li.active>a {
 }
 
 section.content-wrapper {
-  width: 620px;
+  width: 38.75rem;
   margin: auto;
   margin-top: .7rem;
 }
@@ -95,8 +125,10 @@ section.content-wrapper {
 div.new-todo {
   width: 100%;
 }
-/*** custom checkbox style start ***/
-.checkbox-wrapper{
+
+/** custom checkbox style start **/
+
+.checkbox-wrapper {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -104,7 +136,7 @@ div.new-todo {
   height: 1.2rem;
 }
 
-.checkbox-marker{
+.checkbox-marker {
   position: absolute;
   left: 0;
   top: 0;
@@ -113,11 +145,13 @@ div.new-todo {
   border-radius: .15rem;
   background-color: #FFFFFF;
 }
+
 .checkbox-marker:after {
   content: "";
   position: absolute;
   display: none;
 }
+
 .checkbox-wrapper .checkbox-marker:after {
   left: .4rem;
   top: .2rem;
@@ -130,52 +164,92 @@ div.new-todo {
   transform: rotate(45deg);
 }
 
-.checkbox-wrapper>[type="checkbox"]{
+.checkbox-wrapper>[type="checkbox"] {
   position: absolute;
   left: 0;
   opacity: 0;
 }
 
-[type="checkbox"]:hover ~ .checkbox-marker{
-  background-color: #C8C8C8;
+[type="checkbox"]:hover~.checkbox-marker {
+  background-color: var(--font-color-lightest);
 }
 
-[type="checkbox"]:checked ~ .checkbox-marker {
-  background-color: #4A90E2;
+[type="checkbox"]:checked~.checkbox-marker {
+  background-color: var(--main-color-light);
 }
 
-[type="checkbox"]:checked ~ .checkbox-marker:after {
+[type="checkbox"]:checked~.checkbox-marker:after {
   display: block;
 }
-/*** custom checkbox style end ***/
 
-.todo-item{
-  padding: 1.6rem 1.2rem;
-  background-color: #F2F2F2;
-  border-radius: .25rem;
-  margin-bottom: .4rem;
+/** new todo input style **/
+
+.new-todo {
+  margin: 1.2rem 0;
 }
 
-.todo-item .todo-title{
-  margin-left: .8rem;
-  font-size: 1.2rem;
+.new-todo input[type="text"]{
+  height: 4rem;
+}
+
+/** todo list & item style **/
+
+.todo-list {
+  margin: 0.3rem 0;
+}
+
+.todo-item {
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: var(--background-color-light);
+  border-radius: .25rem;
+  margin-bottom: .4rem;
   user-select: none;
+}
+
+.todo-item .todo-title {
+  margin-left: .8rem;
   vertical-align: top;
 }
 
-.todo-item .toolbox{
+.todo-item .toolbox {
   float: right;
+  margin-right: 1.5rem;
 }
 
-.todo-item .tip-content {
-  font-size: .8rem;
+.todo-item .toolbox span {
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.todo-item .tips-content {
   position: relative;
   margin-top: .75rem;
-  left: 2rem;
+  left: 2.5rem;
 }
 
-.todo-item.completed .todo-title{
+.todo-item .tips-content div {
+  display: inline;
+  margin-right: .5rem;
+}
+
+.todo-item.marked {
+  background-color: var(--important-color-lite);
+}
+
+.todo-item.marked .toolbox .star-button {
+  color: var(--important-color-deep);
+}
+
+.todo-item.completed .todo-title {
   font-style: italic;
   text-decoration-line: line-through;
-  color: #757575;
+  color: var(--font-color-lightest);
+}
+
+.todo-counting{
+  font-style: italic;
+  color: var(--font-color-lightest);
+  padding-left: 2rem;
 }

@@ -1,16 +1,37 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require('autoprefixer');
+
 
 const javascript = {
   test: /\.js$/,
   exclude: /node_modules/,
-  loader: 'babel-loader'
+  use:[{
+    loader: 'babel-loader',
+    options: {
+      presets: ['env'],
+      plugins: ['transform-runtime', 'syntax-dynamic-import']
+    }
+  }]
 };
 
-const style = {
-  test: /\.scss$/,
-  loader: 'sass-loader'
+const postcss = {
+  loader: 'postcss-loader',
+  options: {
+    plugins() { return [autoprefixer({ browsers: 'last 3 versions' })]; }
+  }
+};
+
+const scssStyle = {
+  test: /\.(scss)$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    postcss,
+    'sass-loader',
+  ],
 }
 
 module.exports = {
@@ -28,15 +49,21 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-      javascript
+      javascript,
+      scssStyle
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    })
   ]
 }

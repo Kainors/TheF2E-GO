@@ -13,12 +13,19 @@
   "author": "Kainors",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^8.6.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "hoek": "^4.2.1",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.3",
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
@@ -27,6 +34,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
   }
 }

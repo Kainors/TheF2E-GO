@@ -4,7 +4,8 @@
   "description": "六角學院 The F2E - 前端修練精神時光屋",
   "main": "index.js",
   "scripts": {
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "assets": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -29,10 +30,13 @@
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "axios": "^0.18.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"

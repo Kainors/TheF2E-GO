@@ -24,8 +24,8 @@ const postcss = {
   }
 };
 
-const scssStyle = {
-  test: /\.(scss)$/,
+const style = {
+  test: /\.(s[ac]ss)$|\.(css)$/,
   use: [
     MiniCssExtractPlugin.loader,
     'css-loader',
@@ -50,7 +50,7 @@ module.exports = {
         loader: 'vue-loader'
       },
       javascript,
-      scssStyle
+      style
     ]
   },
   resolve: {

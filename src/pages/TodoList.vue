@@ -3,27 +3,22 @@
     <header>
       <nav>
         <ul class="nav-bar main-title">
-          <li class="nav-item active">
-            <a href="#">My Task</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">In Progress</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">Completed</a>
-          </li>
+          <li class="nav-item" :class="{active:currentTab === 'All'}" @click="currentTab = 'All'">My Task</li>
+          <li class="nav-item" :class="{active:currentTab === 'InProgress'}" @click="currentTab = 'InProgress'">In Progress</li>
+          <li class="nav-item" :class="{active:currentTab === 'Completed'}" @click="currentTab= 'Completed'">Completed</li>
         </ul>
       </nav>
     </header>
     <section class="content-wrapper main-title">
       <div class="new-todo">
-        <input type="text" placeholder=" + Add Task">
+        <input type="text" placeholder=" + Add Task" v-model="tempAddTodo.title" v-if="!isAdd" @click="isAdd = true">
+        <todo-editor v-if="isAdd" v-bind="{ editTodo: tempAddTodo, onClickCancel: clearAdd, onClickOk: addTodo }"></todo-editor>
       </div>
       <ul class="todo-list">
-        <todo-item v-for="todo in todos" :key="todo.id" v-bind="{todoData:todo,onTodoChange:todoChange}"></todo-item>
+        <todo-item v-for="todo in filterTodos" :key="todo.id" v-bind="{todoData:todo,onTodoChange:updateTodo}"></todo-item>
       </ul>
       <div class="todo-counting">
-        4 tasks left
+        {{todoCounting}}
       </div>
     </section>
   </div>
@@ -39,33 +34,83 @@ fontawesome.library.add(solid);
 fontawesome.library.add(regular);
 
 import todoItem from './components/TodoItem';
+import todoEditor from './components/TodoEditor';
 
 export default {
   data () {
     return {
       todos: [],
       isEdit: false,
+      currentTab: 'All',
+      tempAddTodo: {
+        title: '',
+        expDate: '',
+        expTime: '',
+        comment: ''
+      },
+      isAdd: false
     };
   },
   computed: {
     filterTodos () {
-
+      this.todos.sort((a, b) => {
+        let flag = 0;
+        if (a.completed || b.completed) {
+          flag = a.completed - b.completed;
+        }
+        else {
+          flag = b.marked - a.marked;
+        }
+        return flag;
+      });
+      let filtered = this.todos.filter(todo => {
+        if (this.currentTab === 'Completed') return todo.completed;
+        else if (this.currentTab === 'InProgress') return !todo.completed;
+        return true;
+      });
+      return filtered;
     },
     todoCounting () {
-      return this.todos.filter(todo => !todo.completed).length;
+      if (this.currentTab === 'Completed') {
+        return `${this.todos.filter(todo => todo.completed).length} task completed`;
+      } else {
+        return `${this.todos.filter(todo => !todo.completed).length} task left`;
+      }
     }
   },
   created () {
     this.todos = sampleData;
   },
   methods: {
-    todoChange (id, item) {
-      const updateItme = this.todos.find(todo=>todo.id===id);
-      Object.assign(updateItme,item);
-      console.log(updateItme);
-      console.log('change')
+    updateTodo (id, item) {
+      const updateItme = this.todos.find(todo => todo.id === id);
+      Object.assign(updateItme, item);
+    },
+    addTodo (newTodo) {
+      let defaultTodo = {
+        id: Date.now(),
+        title: '',
+        expDate: '',
+        expTime: '',
+        comment: '',
+        completed: false,
+        marked: false
+      };
+      Object.assign(defaultTodo, newTodo);
+      this.todos.push(defaultTodo);
+      this.clearAdd();
+    },
+    clearAdd () {
+      this.tempAddTodo.title = '';
+      this.tempAddTodo.expDate = '';
+      this.tempAddTodo.expTime = '';
+      this.tempAddTodo.comment = '';
+      this.isAdd = false;
     }
   },
-  components: { todoItem }
+  components: {
+    todoItem,
+    todoEditor
+  }
 };
 </script>

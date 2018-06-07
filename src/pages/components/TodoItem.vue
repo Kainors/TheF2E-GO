@@ -1,5 +1,5 @@
 <template>
-  <li class="todo-item" :class="{marked: todo.marked,completed: todo.completed}">
+  <li class="todo-item" :class="{marked: isMarked,completed: todo.completed}">
     <label class="checkbox-wrapper">
       <input type="checkbox" :id="`todo_${todo.id}`" :checked="todo.completed" @change="todo.completed=!todo.completed">
       <span class="checkbox-marker"></span>
@@ -8,18 +8,18 @@
       {{todo.title}}
     </label>
     <div class="toolbox">
-      <span class="star-button" @click="todo.marked=!todo.marked">
-        <span v-show="todo.marked"><i class="fas fa-star"></i></span>
-        <span v-show="!todo.marked"><i class="far fa-star"></i></span>
+      <span class="star-button" @click="todo.marked=!todo.completed && !todo.marked">
+        <span v-show="isMarked"><i class="fas fa-star"></i></span>
+        <span v-show="!isMarked"><i class="far fa-star"></i></span>
       </span>
       <span class="edit-button">
         <i class="fas fa-pencil-alt"></i>
       </span>
     </div>
     <div class="tips-content remark">
-      <div class="deadline" v-if="todo.expTime">
+      <div class="deadline" v-if="todo.expTime || todo.expDate">
         <i class="far fa-calendar-alt"></i>
-        {{todo.expTime}}
+        {{todo.expDate}} {{todo.expTime}}
       </div>
       <div class="file-item" v-if="todo.file">
         <i class="far fa-file"></i>
@@ -44,6 +44,11 @@ export default {
         marked: false,
         completed: false
       }
+    }
+  },
+  computed:{
+    isMarked(){
+      return this.todo.marked && !this.todo.completed;
     }
   },
   props: ['todoData', 'onTodoChange'],

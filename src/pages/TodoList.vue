@@ -30,8 +30,12 @@ import fontawesome from '@fortawesome/fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
 
-fontawesome.library.add(solid);
-fontawesome.library.add(regular);
+fontawesome.library.add(solid.faStar);
+fontawesome.library.add(regular.faStar);
+fontawesome.library.add(solid.faPencilAlt);
+fontawesome.library.add(regular.faCalendarAlt);
+fontawesome.library.add(regular.faFile);
+fontawesome.library.add(regular.faCommentDots);
 
 import todoItem from './components/TodoItem';
 import todoEditor from './components/TodoEditor';

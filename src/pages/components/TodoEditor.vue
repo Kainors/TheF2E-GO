@@ -1,6 +1,6 @@
 <template>
   <div class="todo-editor">
-    <input type="text" placeholder="Type task title here..." v-model="tempTodo.title" @click="isAdd = true">
+    <input type="text" placeholder="Type task title here..." ref="todoTitle" v-model="tempTodo.title" @click="isAdd = true">
     <div class="editor-form subtitle">
       <div class="form-group">
         <label>
@@ -38,12 +38,22 @@ export default {
     }
   },
   props: ['editTodo', 'onClickCancel', 'onClickOk'],
-  methods:{
-    clickOk(){
-      this.onClickOk(this.tempTodo);
+  created () {
+    Object.assign(this.tempTodo, this.editTodo);
+  },
+  mounted(){
+    this.$refs.todoTitle.focus();
+  },
+  methods: {
+    clickOk () {
+      if (this.onClickOk) {
+        this.onClickOk(this.tempTodo);
+      }
     },
-    clickCancel(){
-      this.onClickCancel();
+    clickCancel () {
+      if (this.onClickCancel) {
+        this.onClickCancel();
+      }
     }
   }
 }

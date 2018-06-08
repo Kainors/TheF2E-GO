@@ -1,10 +1,21 @@
 require('dotenv').config();
+const path = require('path');
+const fs = require('fs');
 const PORT = process.env.PORT || 8888;
 
-if(process.env.NODE_ENV){
-  require('./bundle')
-}
+const isWebpackBundled = fs.existsSync(path.join(__dirname,'./public/dist'));
 
-require('./app').listen(PORT, () => {
-  console.log(`Server listen at ${PORT}`);
-});
+new Promise((resolve, reject) => {
+  if (process.env.NODE_ENV && !isWebpackBundled) {
+    require('./bundle').run((err, status) => {
+      if (err) reject(err);
+      resolve();
+    });
+  } else {
+    resolve();
+  }
+}).then(() => {
+  require('./app').listen(PORT, () => {
+    console.log(`Server listen at ${PORT}`);
+  });
+})

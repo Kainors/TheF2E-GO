@@ -12,3 +12,10 @@ npm run dev
 ## 成果頁面
 
 - Week 1: [http://localhost:8888/#/TodoList](http://localhost:8888/#/TodoList)
+  - 練習項目:
+    - 純 CSS 刻版
+    - Vue
+  - 待完成事項:
+    - 檔案上傳/下載功能
+    - 在列表上顯示 comment 訊息
+    - 排序功能

@@ -2,9 +2,10 @@
   "name": "hexschool-the-f2e",
   "version": "0.0.0",
   "description": "六角學院 The F2E - 前端修練精神時光屋",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
-    "dev": "node app.js",
+    "start": "node ./start.js",
+    "dev": "concurrently \"npm run start\" \"npm run assets\" --names \"💻 ,📦 \" --prefix \"name\"",
     "assets": "webpack -w"
   },
   "repository": {
@@ -20,7 +21,9 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "hoek": "^4.2.1",
     "mini-css-extract-plugin": "^0.4.0",

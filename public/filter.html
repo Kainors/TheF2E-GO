@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Week2 - Filter</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="./assets/week2-logo.svg" alt="logo">
+    </div>
+    <div class="search">
+      <input type="text" name="search" placeholder="Explore your own activities">
+    </div>
+  </header>
+  <div class="content-wrapper">
+    <section class="slider">
+      <div class="form-group">
+        <label for="location" class="form-label">Location</label>
+        <select name="location" id="location">
+          <option value="Taiwan">Taiwan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date</label>
+        <label for="startDate">from
+          <input type="date" name="startDate" id="startDate">
+        </label>
+        <label for="endDate">to
+          <input type="date" name="endDate" id="endDate">
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Categories</label>
+        <label>
+          <input type="checkbox" value="All">All
+        </label>
+        <label>
+          <input type="checkbox" value="Entertainment">Entertainment
+        </label>
+        <label>
+          <input type="checkbox" value="Food">Food
+        </label>
+        <label>
+          <input type="checkbox" value="Learning">Learning
+        </label>
+        <label>
+          <input type="checkbox" value="Outdoors">Outdoors
+        </label>
+      </div>
+      <button>search</button>
+    </section>
+    <section class="content">
+      <div class="result-info">
+        Showing 15 results by…
+      </div>
+      <div class="filter-tags">
+        <div class="tag">Koahsiung <a>&times;</a></div>
+        <div class="tag">Entertainment <a>&times;</a></div>
+      </div>
+      <div class="search-result">
+        <div class="content-item">
+          <div class="content-image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="">
+          </div>
+          <div class="content-body">
+            <div class="title">Kogi Cosby sweater.</div>
+            <div class="paragrahp">
+                Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.
+            </div>
+            <div class="content-info">
+              <div class="author">Ethan Foster</div>
+              <div class="tags">
+                <ul>
+                  <li>Entertainment</li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-info">
+              <div class="location">Kaohsiung City</div>
+              <div class="date">2018/5/24 - 2018/5/31</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="">
+          </div>
+          <div class="content-body">
+            <div class="title">In the tumultuous business.</div>
+            <div class="paragrahp">
+                It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor Queequeg sink to rise no more, then both usage and honour demanded, that instead of cutting the cord, it should drag me down in his.
+            </div>
+            <div class="content-info">
+              <div class="author">Herman Cobb</div>
+              <div class="tags">
+                <ul>
+                  <li>Entertainment</li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-info">
+              <div class="location">Kaohsiung City</div>
+              <div class="date">2018/5/24 - 2018/5/31</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="">
+          </div>
+          <div class="content-body">
+            <div class="title">I have hinted that I would often jerk poor
+                Queequeg from between the wha.</div>
+            <div class="paragrahp">
+                In the tumultuous business of cutting-in and attending to a whale, there is much running backwards and forwards among the crew. Now hands are wanted here, and then again hands are wanted there. There is no staying in any one place; for at one and the same time everything has to be done everywhere. It is much the same with him who endeavors the description of the scene. We must now retrace our way a little. It was mentioned that up.
+            </div>
+            <div class="content-info">
+              <div class="author">Landon Powers</div>
+              <div class="tags">
+                <ul>
+                  <li>Entertainment</li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-info">
+              <div class="location">Kaohsiung City</div>
+              <div class="date">2018/5/24 - 2018/5/31</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="paging">
+        <ul>
+          <li><a href="#"><<</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">>></a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

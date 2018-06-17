@@ -1,0 +1,267 @@
+:root {
+  --main-color-light: #9013FE;
+  --main-color-deep: #7828B4;
+  --gary-deeper: #9B9B9B;
+  --gary-deep: #D7D7D7;
+  --gary-light: #EBEBEB;
+  --gary-lighter: #F2F2F2;
+}
+
+/** Reset CSS **/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  background-color: var(--gary-lighter);
+}
+
+a {
+  text-decoration-line: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/** main style **/
+
+/** header **/
+
+header {
+  height: 5.75rem;
+  background: var(--main-color-deep);
+}
+
+header div {
+  display: inline;
+}
+
+header>.logo {
+  width: 18.75rem;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header>.logo>a {
+  font-size: 2.25rem;
+}
+
+.search input {
+  width: 24.25rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  border-bottom: 0.06rem solid white;
+  height: 2.75rem;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input::placeholder {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, .5);
+}
+
+.content-wrapper {
+  display: flex;
+}
+
+/** slider **/
+
+.content-wrapper .slider {
+  background-color: var(--gary-light);
+  flex: 0 1 auto;
+}
+
+.slider>.form-group {
+  width: 14.55rem;
+  border-bottom: 0.06rem solid var(--gary-deep);
+  padding: 1.68rem 2.1rem;
+}
+
+.slider>.form-group:last-of-type {
+  border-bottom: 0;
+}
+
+.slider>.form-group select {
+  width: 100%;
+}
+
+.slider>.form-group>label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.slider>.form-group>label:first-child {
+  margin-bottom: 1rem;
+}
+
+.slider>.form-group>label.form-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.slider>button{
+  float: right;
+  margin-right: 2rem;
+  border: 0;
+  background-color: var(--main-color-light);
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: 6.25rem;
+}
+
+/** content **/
+
+.content-wrapper .content {
+  flex: 1 1 auto;
+  padding: 1.5rem 2.62rem;
+}
+
+.content .result-info {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.content .filter-tags {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.content .filter-tags .tag {
+  /* height: 1.19rem; */
+  padding: 0.5rem 1rem;
+  border: 0.06rem solid var(--main-color-light);
+  font-size: 1rem;
+  border-radius: 6.25rem;
+  line-height: 1.19rem;
+  margin-right: 1rem;
+  color: var(--main-color-light);
+}
+
+.content .search-result {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content .search-result .content-item {
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  /* height: 13.75rem; */
+  background-color: #FFFFFF;
+  flex: 1 0 48.75rem;
+  display: flex;
+}
+
+.content-item .content-image img {
+  width: 13.75rem;
+  /* height: 13.75rem; */
+}
+
+.content-item .content-image {
+  flex: 0 0 auto;
+}
+
+.content-item .content-body {
+  padding: 1.5rem 1.25rem;
+  /* height: 100%; */
+  flex-basis: 35rem;
+}
+
+.content-item .title {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  color: var(--main-color-light);
+}
+
+.content-item .paragrahp {
+  margin-top: 1rem;
+  height: 3.13rem;
+  line-height: 1.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.content-item .content-info {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.content-item .content-info>div {
+  margin-right: 1rem;
+}
+
+.content-item .tags ul li {
+  display: inline-block;
+  height: 1.5rem;
+  background-color: var(--gary-deep);
+  color: white;
+  padding: 0.18rem 1rem;
+  line-height: 1.19rem;
+  border-radius: 6.25rem;
+}
+
+.content-item .author {
+  font-weight: bold;
+}
+
+.content-item .location,
+.content-item .date {
+  color: var(--gary-deeper);
+}
+
+.paging {
+  float: right;
+  text-align: center;
+}
+
+.paging>ul {
+  display: flex;
+}
+
+.paging>ul>li {
+  display: block;
+  width: 2.56rem;
+  height: 2.63rem;
+  background-color: white;
+  border: 0.03rem solid var(--gary-lighter);
+  margin: 0;
+  padding: 0;
+}
+
+.paging>ul>li:first-child {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.paging>ul>li:last-child {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.paging>ul>li>a {
+  line-height: 2.63rem;
+  color: var(--main-color-light);
+}
+
+.paging>ul>li.active {
+  background-color: var(--main-color-light);
+}
+
+.paging>ul>li.active>a {
+  color: white;
+}

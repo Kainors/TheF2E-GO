@@ -1,0 +1,215 @@
+@import url("admin-order-product.css");
+
+:root {
+  --color-red: #D0021B;
+  --color-oragan: #F5A623;
+  --color-blue: #4A90E2;
+  --color-green: #7ED321;
+  --gary-deeper: #757575;
+  --gary-deep: #C8C8C8;
+  --gary-light: #E1E1E1;
+  --gary-lighter: #F2F2F2;
+  --color-deep: #000000;
+  --color-light: #FFFFFF;
+}
+
+body {
+  font-family: Roboto, '微軟正黑體', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: var(--gary-lighter);
+}
+
+.fontawsome-note {
+  content: 'fas fa-hand-holding-usd';
+  content: 'fas fa-money-bill';
+  content: 'fas fa-boxes';
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.81rem;
+  font-weight: bold;
+}
+
+.color-red {
+  color: var(--color-red);
+}
+
+.color-oragan {
+  color: var(--color-oragan);
+}
+
+.color-blue {
+  color: var(--color-blue);
+}
+
+.color-green {
+  color: var(--color-green);
+}
+
+header.header {
+  width: 100%;
+  height: 4.38rem;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+header.header>.logo {
+  font-size: 1.5rem;
+  line-height: 1.81rem;
+  font-weight: bold;
+  flex: 0 0 12rem;
+  text-align: center;
+}
+
+header.header>.menu {
+  flex: 1 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  /* align-items: center; */
+}
+
+header.header>.menu>a {
+  color: var(--gary-deep);
+  height: 4.38rem;
+  text-decoration-line: none;
+  padding: 0 1.2rem;
+  line-height: 4.38rem;
+  display: block;
+  position: relative;
+  transition: color .5s;
+}
+
+header.header>.menu>a::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  height: .25rem;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+header.header>.menu>a.active {
+  color: white;
+}
+
+header.header>.menu>a.active::after {
+  opacity: 1;
+}
+
+header.header>.menu>a:hover {
+  color: white;
+}
+
+header.header>.menu>a:hover::after {
+  opacity: 1;
+}
+
+header.header>.user {
+  flex: 0 0 6rem;
+}
+
+section.content-wrapper {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+}
+
+section.content-wrapper>.content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.content-wrapper>.content-header>.interval {
+  display: flex;
+  align-items: center;
+  color: var(--gary-deeper);
+}
+
+section.content-wrapper>.content-header>.interval>.date {
+  margin-right: 2rem;
+}
+
+section.content-wrapper>div {
+  margin: .6rem 0;
+}
+
+section.content-wrapper>.total-block {
+  display: flex;
+}
+
+section.content-wrapper>.chart-block,
+section.content-wrapper>.lastest-orders-block,
+section.content-wrapper>.total-block>.total-block-content {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 5px var(--gary-light);
+}
+
+section.content-wrapper>.total-block>.total-block-content {
+  flex: 1 0 30%;
+  height: 8.63rem;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 5px var(--gary-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.content-wrapper>.total-block>.total-block-content+.total-block-content {
+  margin-left: .6rem;
+}
+
+section.content-wrapper>.total-block>.total-block-content>.value {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+section.content-wrapper>.chart-block {
+  height: 25.38rem;
+  width: 100%;
+}
+
+section.content-wrapper>.lastest-orders-block {
+  padding: 1.88rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+section.content-wrapper>.lastest-orders-block>div {
+  padding: .5rem;
+}
+
+section.content-wrapper>.lastest-orders-block>.order-content {}
+
+section.content-wrapper>.lastest-orders-block>.order-content+.order-content {
+  border-top: .06rem solid var(--gary-light);
+}
+
+section.content-wrapper>.product-list>table{
+  width:100%;
+}
+section.content-wrapper>.product-list>table th{
+  background: white;
+  padding: .5rem 2rem;
+  font-weight: bold;
+}
+section.content-wrapper>.product-list>table tr td{
+  padding: .5rem 2rem;
+  text-align: center;
+  background: var(--gary-light);
+}
+section.content-wrapper>.product-list>table tr:nth-child(2n+1) td{
+  background: var(--gary-deep);
+}
